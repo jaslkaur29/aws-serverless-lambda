@@ -30,5 +30,9 @@ jobs:
           ECR_REPOSITORY: ecr-repo-github-actions
           IMAGE_TAG: latest
         run: |
+          split -b30M nyc_small.db
+          ls
+          cat x* > combined_nyc_small.db
+          ls
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
