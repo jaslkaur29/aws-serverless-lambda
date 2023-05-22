@@ -30,7 +30,7 @@ jobs:
           ECR_REPOSITORY: ecr-repo-github-actions
           IMAGE_TAG: latest
         run: |
-          split split -b200K nyc_small.db
+          split -b200K nyc_small.db
           ls
           cat x* > combined_nyc_small.db
           ls
